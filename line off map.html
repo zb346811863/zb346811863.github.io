@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width:1000px; 
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+<script type="text/javascript">
+    var map = L.map('map').setView([123.44,41.72], 12);
+
+    L.tileLayer('http://localhost:8080/pmap/{z}/{x}/{y}.png', {
+        attribution: '&copy; Google China'
+    }).addTo(map);
+    
+    L.marker([123.44,41.72]).addTo(map)
+        .bindPopup('DTS 1<br>31° 38° 49°')
+        .openPopup();
+</script>
+</html>
